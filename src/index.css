@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    perspective: 1000px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+html,
+body {
+  @apply overflow-x-hidden;
+}
+@layer utilities {
+  .animate-border-glow {
+    position: relative;
+    background: rgb(0, 0, 0);
+    border-radius: 0.75rem;
+  }
+
+  .animate-border-glow::before {
+    content: '';
+    position: absolute;
+    top: -0.5px;
+    left: -0.5px;
+    right: -0.5px;
+    bottom: -0.5px;
+    border-radius: 0.75rem;
+    background: linear-gradient(90deg, transparent, transparent, rgb(224, 243, 255,0.1), transparent, transparent);
+    background-size: 500% 500%;
+    z-index: -1;
+    animation: flow 10s linear infinite;
+  }
+
+  .glass-effect {
+    background: rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 15px rgba(120, 198, 187, 0.4);
+  }
+
+  .shadow-glow-lg {
+    box-shadow: 0 0 30px rgba(120, 198, 187, 0.4);
+  }
+}
+
+@keyframes flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(18, 18, 18);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(120,198,187);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120,198,187, 0.8);
+}
