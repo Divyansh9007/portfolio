@@ -1,4 +1,9 @@
 // Project data interface definition
+import car from "../../assets/car_accident.png";
+import aimath from "../../assets/aimath.png";
+import intern from "../../assets/intern.png";
+import portfolio from "../../assets/portfolio.png";
+
 export interface ProjectData {
   id: number;
   title: string;
@@ -19,7 +24,7 @@ export const projects: ProjectData[] = [
     description: "The Car Accident Detection model uses OpenCV and YOLOv8 to detect collisions and abnormal vehicle behavior in real-time. It ensures fast and accurate accident alerts for safety systems.", // Update project description
     // Replace with your project screenshot
     // Recommended size: 1280x720 or 16:9 aspect ratio
-    image: "src/assets/car_accident.png",
+    image: car,
     tags: ["OpenCV", "Computer Vision", "Roboflow", "Python"], // Update tech tags
     repoUrl: "https://github.com/Divyansh9007/Car-Accident-Detection-Using-YOLOV8", // Update with your repo URL
     
@@ -36,7 +41,7 @@ export const projects: ProjectData[] = [
     id: 2,
     title: "AI-based Hand Gesture Math Calculator", // Change project title
     description: "This project lets users draw math problems in the air using hand gestures tracked via webcam. On a specific gesture, the drawing is sent to Gemini AI for solving. The solution is displayed live in a Streamlit web interface", // Update description
-    image: "src/assets/aimath.png",
+    image: aimath,
     tags: ["Python", "OpenCV and cvzone", "streamlit", "NumPy","Gemini API"],
     repoUrl: "https://github.com/Divyansh9007/AI-Powered-Hand-Gesture-Based-Math-Solver", // Update with your repo URL
     
@@ -52,7 +57,7 @@ export const projects: ProjectData[] = [
     id: 3,
     title: "Intern Management System", // Change project title
     description: "The Intern Management System handles intern registration, task assignments, and performance tracking for efficient management and feedback.", // Update description
-    image: "src/assets/intern.png",
+    image: intern,
     tags: ["React", "Javascript", "Typescript", "TailwindCSS"],
     repoUrl: "https://github.com/Divyansh9007/Intern-Management-System", // Update with your repo URL
    
@@ -68,7 +73,7 @@ export const projects: ProjectData[] = [
     id: 4,
     title: "Portfolio Website", // Change project title
     description: "A modern and interactive portfolio showcasing my skills, projects, and journey as a frontend developer. Built with React, Tailwind CSS, and Framer Motion to deliver a smooth and engaging user experience.", // Update description
-    image: "src/assets/portfolio.png",
+    image: portfolio,
     tags: ["React", "Typescript", "Javascript", "TailwindCSS","Framer Motion"],
     repoUrl: "", // Update with your repo URL
   
