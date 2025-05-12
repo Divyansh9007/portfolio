@@ -1,7 +1,7 @@
 import { Code, Paintbrush, Laptop, MoveHorizontal } from "lucide-react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import myPhoto from "./assets/myphoto.jpeg";
+import myPhoto from "../../../assets/myphoto.jpeg";
 
 interface AboutProps {
   id: string;
