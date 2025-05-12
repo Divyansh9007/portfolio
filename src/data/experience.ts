@@ -34,7 +34,7 @@ export const experienceData: ExperienceItem[] = [
 // Education data - Update with your educational background
 export const educationData: EducationItem[] = [
   {
-    date: "2019 - 2023", // Update education dates
+    date: "2022 - 2026", // Update education dates
     degree: "Bachelor of Technology in Computer Science", // Update degree
     institution: "Vellore Institute of Technology, Vellore", // Update institution
     description: "CGPA: 8.73/10. Specialized in web development, algorithms, and software engineering. Active member of coding club and technical events." // Update education details

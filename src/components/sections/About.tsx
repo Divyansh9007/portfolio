@@ -1,6 +1,7 @@
 import { Code, Paintbrush, Laptop, MoveHorizontal } from "lucide-react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
+import myPhoto from "./assets/myphoto.jpeg";
 
 interface AboutProps {
   id: string;
@@ -160,8 +161,8 @@ const About: React.FC<AboutProps> = ({ id }) => {
               viewport={{ once: true }}
             >
               <img
-                src="/src/assets/myphoto.jpeg"
-                alt="Developer working"
+                src={myPhoto}
+                alt="My Photo"
                 className="absolute top-1/4 left-1/2 w-[50%] h-[50%] object-cover transform -translate-x-1/2 -translate-y-1/2"
               />
             </motion.div>
