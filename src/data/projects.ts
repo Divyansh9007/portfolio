@@ -1,8 +1,8 @@
 // Project data interface definition
-import car from "../../assets/car_accident.png";
-import aimath from "../../assets/aimath.png";
-import intern from "../../assets/intern.png";
-import portfolio from "../../assets/portfolio.png";
+import car from "../assets/car_accident.png";
+import aimath from "../assets/aimath.png";
+import intern from "../assets/intern.png";
+import portfolio from "../assets/portfolio.png";
 
 export interface ProjectData {
   id: number;
