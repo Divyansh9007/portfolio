@@ -144,7 +144,7 @@ const Experience: React.FC<ExperienceProps> = ({ id }) => {
           viewport={{ once: true }}
         >
           <a
-            href="https://drive.google.com/uc?export=download&id=1q839eR0Yxa1Bx1D7ES7SlwmEoSn81col"
+            href="https://drive.google.com/file/d/1nz1jN3bfGR9x0748A48Y1jwrvRV-IBwk/view?usp=sharing"
             className="inline-flex items-center px-6 py-3 bg-[rgb(120,198,187)] text-black font-bold rounded-lg transition-all duration-300 transform hover:scale-105"
             target="_blank"
             rel="noopener noreferrer"

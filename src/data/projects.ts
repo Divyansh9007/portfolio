@@ -59,7 +59,7 @@ export const projects: ProjectData[] = [
     description: "The Intern Management System handles intern registration, task assignments, and performance tracking for efficient management and feedback.", // Update description
     image: intern,
     tags: ["React", "Javascript", "Typescript", "TailwindCSS"],
-    repoUrl: "https://github.com/Divyansh9007/Intern-Management-System", // Update with your repo URL
+    repoUrl: "https://github.com/Divyansh9007/InternHub", // Update with your repo URL
    
     techStack: [
       "React",

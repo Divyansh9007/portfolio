@@ -23,10 +23,10 @@ export const experienceData: ExperienceItem[] = [
     description: "Optimized a computer vision model for violence detection, improving accuracy by 25% and reducing false positives by 30%. Streamlined processes and debugging, leading to a 20% faster project delivery and enhanced model performance." // Update job description
   },
   {
-    date: "June 2024 - July 2024", // Update date range
-    title: "Frontend Developer Intern", // Update job title
-    organization: "Yhills", // Update company name
-    description: "Built a pizza delivery website using React.js, achieving a 40% faster load time and 25% higher user engagement.Integrated features like ordering, cart management, and a responsive UI, with advanced animations and CSS for an enhanced customer experience." // Update job description
+    date: "May 2025 - June 2025", // Update date range
+    title: "Software Developer Intern", // Update job title
+    organization: "Brandistry", // Update company name
+    description: "Collaborated with a team of 5 developers and marketers to design and develop an internal web portal and marketing site, enhancing workflow automation and delivering a seamless and responsive user experience across desktop and mobile platforms." // Update job description
   },
   // Add more work experience entries here
 ];
@@ -35,9 +35,9 @@ export const experienceData: ExperienceItem[] = [
 export const educationData: EducationItem[] = [
   {
     date: "2022 - 2026", // Update education dates
-    degree: "Bachelor of Technology in Computer Science", // Update degree
+    degree: "Bachelor of Technology in Computer Science Engineering", // Update degree
     institution: "Vellore Institute of Technology, Vellore", // Update institution
-    description: "CGPA: 8.73/10. Specialized in web development, algorithms, and software engineering. Active member of coding club and technical events." // Update education details
+    description: "CGPA: 8.75/10. Specialized in web development, algorithms, and software engineering. Active member of coding club and technical events." // Update education details
   },
   {
     date: "2020", // Update education dates

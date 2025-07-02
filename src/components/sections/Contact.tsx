@@ -240,7 +240,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-2 bg-black border border-[rgb(120,198,187)]/30 rounded-lg focus:ring-2 focus:ring-[rgb(120,198,187)] focus:border-[rgb(120,198,187)] text-white font-bold"
-                      placeholder="Enter Your Email"
+                      placeholder="Enter Your Name"
                     />
                   </div>
 
