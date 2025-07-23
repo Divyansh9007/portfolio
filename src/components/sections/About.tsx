@@ -217,14 +217,6 @@ const About: React.FC<AboutProps> = ({ id }) => {
                 started as a hobby soon turned into a deeper exploration of web
                 technologies and problem-solving through code.
               </p>
-              <p className="text-gray-200 text-lg font-medium leading-relaxed relative z-10">
-                Over time, I had the opportunity to work with startups,
-                agencies, and enthusiastic teams, gaining practical experience
-                and sharpening my skills in real-world projects. Today, I focus
-                on building responsive, accessible, and user-centric web
-                applications — combining thoughtful design with clean, robust
-                code to deliver seamless digital experiences.
-              </p>
             </motion.div>
           </Tilt>
 
