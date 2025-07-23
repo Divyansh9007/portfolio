@@ -184,7 +184,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
             className="transform-gpu md:ml-8"
           >
             <motion.div
-              className="relative bg-black/70 backdrop-blur-md rounded-2xl shadow-xl border border-[rgb(120,198,187)]/20 p-12 min-h-[34rem] h-96 w-full flex flex-col justify-center overflow-hidden transition-all duration-300 group hover:shadow-[0_0_48px_12px_rgba(120,198,187,0.35)] hover:border-[rgb(120,198,187)]"
+              className="relative bg-black/70 backdrop-blur-md rounded-2xl shadow-xl border border-[rgb(120,198,187)]/20 p-6 md:p-12 min-h-[24rem] md:min-h-[34rem] h-auto w-full flex flex-col justify-center overflow-hidden transition-all duration-300 group hover:shadow-[0_0_48px_12px_rgba(120,198,187,0.35)] hover:border-[rgb(120,198,187)]"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               whileHover={{ scale: 1.04 }}
