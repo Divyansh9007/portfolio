@@ -110,7 +110,7 @@ export const projects: ProjectData[] = [
     image: nqueens,
     tags: ["React", "Javascript", "TailwindCSS","Framer Motion"],
     repoUrl: "https://github.com/Divyansh9007/AlgoVision", // Update with your repo URL
-    liveUrl: "algo-vision-flax.vercel.app",
+    
   
     techStack: [
       "React",
@@ -127,7 +127,7 @@ export const projects: ProjectData[] = [
     image: dashboard,
     tags: ["React", "Javascript", "TailwindCSS","Framer Motion"],
     repoUrl: "https://github.com/Divyansh9007/finance-app", // Update with your repo URL
-    liveUrl: "finance-personal-app.vercel.app/",
+    
   
     techStack: [
       "React",
