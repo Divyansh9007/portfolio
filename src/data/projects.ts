@@ -4,6 +4,8 @@ import aimath from "../assets/aimath.png";
 import intern from "../assets/intern.png";
 import portfolio from "../assets/portfolio.png";
 import face from "../assets/face.png"
+import nqueens from "../assets/nqueens.png"
+import dashboard from "../assets/dashboard.png"
 export interface ProjectData {
   id: number;
   title: string;
@@ -96,6 +98,40 @@ export const projects: ProjectData[] = [
     techStack: [
       "React",
       "Typescript",
+      "Javascript",
+      "TailwindCSS",
+      "Framer Motion"
+    ]
+  },
+  {
+    id: 6,
+    title: "AlgoVisualizer", // Change project title
+    description: "Interactive platform to visualize and understand algorithms through animations and step-by-step explanations.", // Update description
+    image: nqueens,
+    tags: ["React", "Javascript", "TailwindCSS","Framer Motion"],
+    repoUrl: "https://github.com/Divyansh9007/AlgoVision", // Update with your repo URL
+    liveUrl: "algo-vision-flax.vercel.app",
+  
+    techStack: [
+      "React",
+      "Javascript",
+      "TailwindCSS",
+      "Framer Motion",
+      "Zustand"
+    ]
+  },
+  {
+    id: 7,
+    title: "Finance Tracker", // Change project title
+    description: "Interactive Platform to manage client transactions and investments and provide AI Insights", // Update description
+    image: dashboard,
+    tags: ["React", "Javascript", "TailwindCSS","Framer Motion"],
+    repoUrl: "https://github.com/Divyansh9007/finance-app", // Update with your repo URL
+    liveUrl: "finance-personal-app.vercel.app/",
+  
+    techStack: [
+      "React",
+      "TypeScript",
       "Javascript",
       "TailwindCSS",
       "Framer Motion"
