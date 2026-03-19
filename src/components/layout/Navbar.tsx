@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Github, Linkedin, Instagram } from "lucide-react";
+import { Menu, X, Github, Linkedin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -119,19 +119,6 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 <Linkedin className="w-6 h-6" />
                 <span className="absolute inset-0 bg-[rgb(120,198,187)]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.a>
-
-              <motion.a
-                href="https://instagram.com/divyansh22_11/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="p-3 rounded-full bg-[#1a1f29] border border-[#2a303c] hover:border-[rgb(120,198,187)] text-white transition-all relative overflow-hidden group"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Instagram className="w-6 h-6" />
-                <span className="absolute inset-0 bg-[rgb(120,198,187)]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </motion.a>
             </div>
           </div>
 
@@ -223,17 +210,6 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   whileTap={{ scale: 0.9 }}
                 >
                   <Linkedin className="w-6 h-6" />
-                </motion.a>
-                <motion.a
-                  href="https://www.instagram.com/divyansh22_11/"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  aria-label="Instagram"
-                  className="p-3 rounded-full bg-[#1a1f29] border border-[#2a303c] hover:border-[rgb(120,198,187)] text-white transition-all duration-300 relative overflow-hidden group"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <Instagram className="w-6 h-6" />
                 </motion.a>
               </div>
             </motion.div>

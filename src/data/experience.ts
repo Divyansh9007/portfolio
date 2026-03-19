@@ -17,16 +17,16 @@ interface EducationItem {
 // Work experience data - Update with your professional experience
 export const experienceData: ExperienceItem[] = [
   {
-    date: "May 2024 - Aug 2024", // Update date range
-    title: "Machine Learning Intern", // Update job title
-    organization: "KalkiNI", // Update company name
-    description: "Optimized a computer vision model for violence detection, improving accuracy by 25% and reducing false positives by 30%. Streamlined processes and debugging, leading to a 20% faster project delivery and enhanced model performance." // Update job description
+    date: "January 2026 - Present",
+    title: "MLOps Engineer",
+    organization: "UPL",
+    description: "Building and optimizing machine learning pipelines using Databricks, MLflow, and Airflow. Developing scalable data processing workflows with Python and implementing CI/CD practices for ML models. Managing experiment tracking, model versioning, and deployment automation."
   },
   {
-    date: "May 2025 - June 2025", // Update date range
-    title: "Software Developer Intern", // Update job title
-    organization: "Brandistry", // Update company name
-    description: "Collaborated with a team of 5 developers and marketers to design and develop an internal web portal and marketing site, enhancing workflow automation and delivering a seamless and responsive user experience across desktop and mobile platforms." // Update job description
+    date: "May 2024 - Aug 2024",
+    title: "Machine Learning Intern",
+    organization: "KalkiNI",
+    description: "Optimized a computer vision model for violence detection, improving accuracy by 25% and reducing false positives by 30%. Streamlined processes and debugging, leading to a 20% faster project delivery and enhanced model performance."
   },
   // Add more work experience entries here
 ];

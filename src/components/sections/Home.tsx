@@ -64,29 +64,10 @@ const Home: React.FC<HomeProps> = ({ id, setActiveSection }) => {
     };
   }, [currentDescriptorIndex]);
 
-  // Tilt animation on mouse move
+  // Removed tilt animation for less flashy UI
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current) return;
-
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-
-      const moveX = ((clientX - innerWidth / 2) / innerWidth) * 15;
-      const moveY = ((clientY - innerHeight / 2) / innerHeight) * 15;
-
-      containerRef.current.style.transform = `perspective(1000px) rotateY(${moveX}deg) rotateX(${-moveY}deg)`;
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      if (containerRef.current) {
-        containerRef.current.style.transform =
-          "perspective(1000px) rotateY(0deg) rotateX(0deg)";
-      }
-    };
+    // No-op - removed mouse move tilt animation
+    return () => {};
   }, []);
 
   // Smooth scroll to About section
@@ -101,20 +82,19 @@ const Home: React.FC<HomeProps> = ({ id, setActiveSection }) => {
   return (
     <section
       id={id}
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-r from-[#060a0e] via-[#181e29] to-[#0f1216] "
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0a0e1a] via-[#141820] to-[#0f1216]"
     >
-      {/* Animated background blobs */}
+      {/* Subtle background blobs - reduced opacity and blur */}
       <div className="absolute inset-0">
-        <div className="absolute top-16 left-8 w-80 h-80 bg-[rgb(120,198,187)]/30 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob"></div>
-        <div className="absolute top-32 right-12 w-80 h-80 bg-[rgb(120,198,187)]/30 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-16 left-16 w-80 h-80 bg-[rgb(120,198,187)]/30 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-4000"></div>
-        <div className="absolute bottom-12 right-16 w-80 h-80 bg-[rgb(120,198,187)]/30 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[rgb(120,198,187)]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute top-40 right-16 w-72 h-72 bg-[rgb(120,198,187)]/8 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-[rgb(120,198,187)]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animation-delay-4000"></div>
       </div>
 
       {/* Main content container */}
       <div
         ref={containerRef}
-        className="container mx-auto max-w-7xl px-2 sm:px-4 relative z-10 bg-black/60 backdrop-blur-md rounded-xl shadow-xl p-10  hover:shadow-[0_8px_32px_0_rgba(120,198,187,0.15)] transition-shadow duration-300"
+        className="container mx-auto max-w-6xl px-4 sm:px-6 relative z-10 bg-black/40 backdrop-blur-sm rounded-lg shadow-lg p-8 sm:p-12"
       >
         <motion.div
           className="text-center"
@@ -124,23 +104,23 @@ const Home: React.FC<HomeProps> = ({ id, setActiveSection }) => {
         >
           {/* Main heading */}
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-white"
-            initial={{ scale: 0.8, opacity: 0 }}
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight text-white"
+            initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
             Hi, I'm{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500 hover:scale-105 hover:drop-shadow-[0_0_8px_rgb(6,182,212,0.5)] transition-all duration-300">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-400">
               Divyansh Pansari
             </span>
           </motion.h1>
 
           {/* Typing animation container */}
-          <div className="h-8 sm:h-10 mb-6 sm:mb-8">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold inline-block bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-teal-800">
+          <div className="h-10 mb-8">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-teal-300">
               {text}
               <span
-                className={`inline-block w-1 h-6 ml-1 bg-teal-500 ${
+                className={`inline-block w-1 h-6 ml-1 bg-teal-400 ${
                   isTyping ? "animate-blink" : ""
                 }`}
               ></span>
@@ -149,7 +129,7 @@ const Home: React.FC<HomeProps> = ({ id, setActiveSection }) => {
 
           {/* Description */}
           <motion.p
-            className="text-gray-300 max-w-xl mx-auto mb-8 sm:mb-10 text-base sm:text-lg"
+            className="text-gray-300 max-w-2xl mx-auto mb-10 text-base sm:text-lg leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -161,20 +141,20 @@ const Home: React.FC<HomeProps> = ({ id, setActiveSection }) => {
 
           {/* Call-to-action buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+            className="flex flex-col sm:flex-row justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             <a
               href="#contact"
-              className="px-6 py-3 bg-teal-500 text-black font-semibold rounded-lg shadow-[0_0_10px_rgb(20,184,166,0.5)] hover:bg-emerald-600 hover:shadow-[0_0_15px_rgb(5,150,105,0.7)] hover:scale-105 transition-all duration-300"
+              className="px-8 py-3 bg-teal-500 text-black font-semibold rounded-lg hover:bg-teal-600 transition-colors duration-300"
             >
               Contact Me
             </a>
             <a
               href="#projects"
-              className="px-6 py-3 border-2 border-teal-500 text-teal-500 font-semibold rounded-lg shadow-[0_0_10px_rgb(20,184,166,0.5)] hover:bg-teal-500/10 hover:shadow-[0_0_15px_rgb(6,182,212,0.7)] hover:scale-105 transition-all duration-300"
+              className="px-8 py-3 border-2 border-teal-500 text-teal-400 font-semibold rounded-lg hover:bg-teal-500/10 transition-colors duration-300"
             >
               View Projects
             </a>
@@ -190,10 +170,10 @@ const Home: React.FC<HomeProps> = ({ id, setActiveSection }) => {
         >
           <button
             onClick={handleScroll}
-            className="p-3 rounded-full bg-black/30 backdrop-blur-md border border-teal-500/20 hover:scale-110 hover:rotate-12 hover:shadow-[0_0_12px_rgb(6,182,212,0.5)] transition-all duration-300 animate-bounce-slow"
+            className="p-3 rounded-full bg-black/40 border border-teal-500/40 hover:bg-black/60 transition-colors duration-300"
             aria-label="Scroll down"
           >
-            <ArrowDown className="w-6 h-6 text-teal-500" />
+            <ArrowDown className="w-6 h-6 text-teal-400" />
           </button>
         </motion.div>
       </div>

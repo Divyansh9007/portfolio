@@ -7,12 +7,10 @@ import {
   Linkedin,
   Github,
   ExternalLink,
-  Instagram,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
-import { motion, AnimatePresence } from "framer-motion";
-import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 interface ContactProps {
@@ -109,7 +107,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
     <section
       id={id}
       ref={ref}
-      className="py-20 px-6 bg-gradient-to-r from-[#060a0e] via-[#181e29] to-[#0f1216]"
+      className="py-20 px-6 bg-gradient-to-br from-[#0a0e1a] via-[#141820] to-[#0f1216]"
     >
       <Toaster position="bottom-right" />
       <div className="container mx-auto">
@@ -120,11 +118,11 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[rgb(120,198,187)] via-cyan-400 to-white bg-clip-text text-transparent drop-shadow-lg tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
             Get In Touch
           </h2>
-          <div className="w-20 h-1 bg-[rgb(120,198,187)] mx-auto mb-8"></div>
-          <p className="text-white font-bold max-w-3xl mx-auto text-lg">
+          <div className="w-12 h-1 bg-teal-500 mx-auto mb-6"></div>
+          <p className="text-gray-300 max-w-3xl mx-auto text-lg">
             Have a project in mind or want to discuss opportunities? Feel free
             to reach out!
           </p>
@@ -138,235 +136,148 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
         >
           {/* Contact Info */}
           <div className="space-y-6">
-            <Tilt
-              perspective={1000}
-              scale={1.02}
-              tiltMaxAngleX={5}
-              tiltMaxAngleY={5}
-              glareEnable={true}
-              glareMaxOpacity={0.1}
-              glareColor="#78c6bb"
-              glarePosition="all"
-              glareBorderRadius="12px"
-              className="transform-gpu"
+            <motion.div
+              className="relative overflow-hidden rounded-lg bg-black/50 border border-gray-700 hover:border-teal-500/50 p-8 transition-all duration-300"
+              variants={itemVariants}
             >
-              <motion.div
-                className="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0d1117]/80 to-[#1a1f29]/80 border border-[#2a303c] hover:border-[rgb(120,198,187)]/50 p-8 backdrop-blur-sm"
-                variants={itemVariants}
-                whileHover={{ scale: 1.01 }}
-              >
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,198,187,0.1),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <h3 className="text-2xl font-bold mb-6 text-white">
+                Contact Information
+              </h3>
 
-                <h3 className="text-2xl font-bold mb-6 text-white group-hover:text-[rgb(120,198,187)] transition-colors duration-300">
-                  Contact Information
-                </h3>
+              <div className="space-y-6">
+                {/* Email */}
+                <motion.div
+                  className="flex items-start group"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <div className="p-3 rounded-lg mr-4 border border-gray-700 group-hover:bg-teal-500/10 transition-colors duration-300">
+                    <Mail className="w-5 h-5 text-teal-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium mb-1 text-teal-300">
+                      Email
+                    </h4>
+                    <a
+                      href="mailto:divyanshpansari123@gmail.com"
+                      className="text-gray-300 hover:text-teal-400 transition-colors"
+                    >
+                      divyanshpansari123@gmail.com
+                    </a>
+                  </div>
+                </motion.div>
 
-                <div className="space-y-6">
-                  {/* Email */}
-                  <motion.div
-                    className="flex items-start group"
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <div className="p-3 rounded-lg mr-4 border border-[rgb(120,198,187)]/30 group-hover:bg-[rgb(120,198,187)]/10 transition-colors duration-300">
-                      <Mail className="w-5 h-5 text-[rgb(120,198,187)] group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-medium mb-1 text-[rgb(120,198,187)]">
-                        Email
-                      </h4>
-                      <a
-                        href="mailto:atulmangla210503@gmail.com"
-                        className="text-white font-bold hover:text-[rgb(120,198,187)] transition-colors"
-                      >
-                        divyanshpansari123@gmail.com
-                      </a>
-                    </div>
-                  </motion.div>
+                {/* Location */}
+                <motion.div
+                  className="flex items-start group"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <div className="p-3 rounded-lg mr-4 border border-gray-700 group-hover:bg-teal-500/10 transition-colors duration-300">
+                    <MapPin className="w-5 h-5 text-teal-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium mb-1 text-teal-300">
+                      Location
+                    </h4>
+                    <p className="text-gray-300">Kolkata, India</p>
+                  </div>
+                </motion.div>
 
-                  {/* Location */}
-                  <motion.div
-                    className="flex items-start group"
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <div className="p-3 rounded-lg mr-4 border border-[rgb(120,198,187)]/30 group-hover:bg-[rgb(120,198,187)]/10 transition-colors duration-300">
-                      <MapPin className="w-5 h-5 text-[rgb(120,198,187)] group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-medium mb-1 text-[rgb(120,198,187)]">
-                        Location
-                      </h4>
-                      <p className="text-white font-bold">Kolkata, India</p>
-                    </div>
-                  </motion.div>
-
-                  {/* Phone */}
-                  <motion.div
-                    className="flex items-start group"
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <div className="p-3 rounded-lg mr-4 border border-[rgb(120,198,187)]/30 group-hover:bg-[rgb(120,198,187)]/10 transition-colors duration-300">
-                      <Phone className="w-5 h-5 text-[rgb(120,198,187)] group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-medium mb-1 text-[rgb(120,198,187)]">
-                        Phone
-                      </h4>
-                      <a
-                        href="tel:+918307387430"
-                        className="text-white font-bold hover:text-[rgb(120,198,187)] transition-colors"
-                      >
-                        +91 9007485220
-                      </a>
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
-            </Tilt>
+                {/* Phone */}
+                <motion.div
+                  className="flex items-start group"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <div className="p-3 rounded-lg mr-4 border border-gray-700 group-hover:bg-teal-500/10 transition-colors duration-300">
+                    <Phone className="w-5 h-5 text-teal-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium mb-1 text-teal-300">
+                      Phone
+                    </h4>
+                    <a
+                      href="tel:+919007485220"
+                      className="text-gray-300 hover:text-teal-400 transition-colors"
+                    >
+                      +91 9007485220
+                    </a>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
 
             {/* Social Links */}
-            <Tilt
-              perspective={1000}
-              scale={1.02}
-              tiltMaxAngleX={5}
-              tiltMaxAngleY={5}
-              glareEnable={true}
-              glareMaxOpacity={0.1}
-              glareColor="#78c6bb"
-              glarePosition="all"
-              glareBorderRadius="12px"
-              className="transform-gpu w-full"
+            <motion.div
+              className="relative overflow-hidden rounded-lg bg-black/50 border border-gray-700 hover:border-teal-500/50 p-8 transition-all duration-300"
+              variants={itemVariants}
             >
-              <motion.div
-                className="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0d1117]/80 to-[#1a1f29]/80 border border-[#2a303c] hover:border-[rgb(120,198,187)]/50 p-8 backdrop-blur-sm"
-                variants={itemVariants}
-                whileHover={{ scale: 1.01 }}
-              >
-                {/* Subtle pulse animation */}
-                <motion.div
-                  className="absolute inset-0 rounded-xl pointer-events-none"
-                  animate={{
-                    boxShadow: [
-                      "0 0 0 0px rgba(120, 198, 187, 0)",
-                      "0 0 0 2px rgba(120, 198, 187, 0.1)",
-                      "0 0 0 0px rgba(120, 198, 187, 0)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
+              <h3 className="text-2xl font-bold mb-6 text-white">
+                Connect With Me
+              </h3>
 
-                <h3 className="text-2xl font-bold mb-6 text-white group-hover:text-[rgb(120,198,187)] transition-colors duration-300">
-                  Connect With Me
-                </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* LinkedIn */}
+                <motion.a
+                  href="https://www.linkedin.com/in/divyansh-pansari-896a90234/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 rounded-lg bg-black/50 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 group"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  aria-label="LinkedIn"
+                >
+                  <div className="p-2 rounded-lg bg-[#0077b5]/20 group-hover:bg-[#0077b5]/30 transition-colors duration-300">
+                    <Linkedin className="w-5 h-5 text-[#0077b5]" />
+                  </div>
+                  <span className="text-gray-300 font-medium">
+                    LinkedIn
+                  </span>
+                  <ExternalLink className="w-4 h-4 ml-auto text-gray-500 group-hover:text-teal-400" />
+                </motion.a>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* LinkedIn */}
-                  <motion.a
-                    href="https://www.linkedin.com/in/divyansh-pansari-896a90234/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative flex items-center gap-3 p-4 rounded-xl bg-[#1a1f29]/60 border border-[#2a303c] hover:border-[rgb(120,198,187)] transition-all duration-300 group overflow-hidden"
-                    whileHover={{
-                      y: -3,
-                      backgroundColor: "rgba(120, 198, 187, 0.1)",
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                    aria-label="LinkedIn"
-                  >
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,198,187,0.1),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="p-2 rounded-lg bg-[#0077b5]/20 group-hover:bg-[#0077b5]/30 transition-colors duration-300 z-10">
-                      <Linkedin className="w-5 h-5 text-[#0077b5]" />
-                    </div>
-                    <span className="text-white font-medium z-10">
-                      LinkedIn
-                    </span>
-                    <ExternalLink className="w-4 h-4 ml-auto text-[#b3bac7] group-hover:text-[rgb(120,198,187)] z-10" />
-                  </motion.a>
+                {/* GitHub */}
+                <motion.a
+                  href="https://github.com/Divyansh9007"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 rounded-lg bg-black/50 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 group"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  aria-label="GitHub"
+                >
+                  <div className="p-2 rounded-lg bg-[#333]/20 group-hover:bg-[#333]/30 transition-colors duration-300">
+                    <Github className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-gray-300 font-medium">GitHub</span>
+                  <ExternalLink className="w-4 h-4 ml-auto text-gray-500 group-hover:text-teal-400" />
+                </motion.a>
 
-                  {/* GitHub */}
-                  <motion.a
-                    href="https://github.com/Divyansh9007"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative flex items-center gap-3 p-4 rounded-xl bg-[#1a1f29]/60 border border-[#2a303c] hover:border-[rgb(120,198,187)] transition-all duration-300 group overflow-hidden"
-                    whileHover={{
-                      y: -3,
-                      backgroundColor: "rgba(120, 198, 187, 0.1)",
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                    aria-label="GitHub"
-                  >
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,198,187,0.1),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="p-2 rounded-lg bg-[#333]/20 group-hover:bg-[#333]/30 transition-colors duration-300 z-10">
-                      <Github className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="text-white font-medium z-10">GitHub</span>
-                    <ExternalLink className="w-4 h-4 ml-auto text-[#b3bac7] group-hover:text-[rgb(120,198,187)] z-10" />
-                  </motion.a>
-
-                  {/* Instagram */}
-                  <motion.a
-                    href="https://www.instagram.com/divyansh22_11/"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="relative flex items-center gap-3 p-4 rounded-xl bg-[#1a1f29]/60 border border-[#2a303c] hover:border-[rgb(120,198,187)] transition-all duration-300 group overflow-hidden"
-                    whileHover={{
-                      y: -3,
-                      backgroundColor: "rgba(120, 198, 187, 0.1)",
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    aria-label="Instagram"
-                  >
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,198,187,0.1),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="p-2 rounded-lg bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#dc2743]/20 group-hover:from-[#f09433]/30 group-hover:via-[#e6683c]/30 group-hover:to-[#dc2743]/30 transition-colors duration-300 z-10">
-                      <Instagram className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="text-white font-medium z-10">
-                      Instagram
-                    </span>
-                    <ExternalLink className="w-4 h-4 ml-auto text-[#b3bac7] group-hover:text-[rgb(120,198,187)] z-10" />
-                  </motion.a>
-
-                  {/* Email */}
-                  <motion.a
-                    href="mailto:divyanshpansari123@gmail.com"
-                    className="relative flex items-center gap-3 p-4 rounded-xl bg-[#1a1f29]/60 border border-[#2a303c] hover:border-[rgb(120,198,187)] transition-all duration-300 group overflow-hidden"
-                    whileHover={{
-                      y: -3,
-                      backgroundColor: "rgba(120, 198, 187, 0.1)",
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                    aria-label="Email"
-                  >
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,198,187,0.1),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="p-2 rounded-lg bg-[#D44638]/20 group-hover:bg-[#D44638]/30 transition-colors duration-300 z-10">
-                      <Mail className="w-5 h-5 text-[#D44638]" />
-                    </div>
-                    <span className="text-white font-medium z-10">Email</span>
-                    <ExternalLink className="w-4 h-4 ml-auto text-[#b3bac7] group-hover:text-[rgb(120,198,187)] z-10" />
-                  </motion.a>
-                </div>
-              </motion.div>
-            </Tilt>
+                {/* Email */}
+                <motion.a
+                  href="mailto:divyanshpansari123@gmail.com"
+                  className="flex items-center gap-3 p-4 rounded-lg bg-black/50 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 group"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  aria-label="Email"
+                >
+                  <div className="p-2 rounded-lg bg-[#D44638]/20 group-hover:bg-[#D44638]/30 transition-colors duration-300">
+                    <Mail className="w-5 h-5 text-[#D44638]" />
+                  </div>
+                  <span className="text-gray-300 font-medium">Email</span>
+                  <ExternalLink className="w-4 h-4 ml-auto text-gray-500 group-hover:text-teal-400" />
+                </motion.a>
+              </div>
+            </motion.div>
           </div>
 
           {/* Contact Form */}
           <motion.div
-            className="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0d1117]/80 to-[#1a1f29]/80 border border-[#2a303c] hover:border-[rgb(120,198,187)]/50 p-8 backdrop-blur-sm"
+            className="relative overflow-hidden rounded-lg bg-black/50 border border-gray-700 hover:border-teal-500/50 p-8 transition-all duration-300"
             variants={itemVariants}
-            whileHover={{ scale: 1.01 }}
           >
-            {/* Form glow effect */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,198,187,0.05),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-            <h3 className="text-2xl font-bold mb-6 text-white group-hover:text-[rgb(120,198,187)] transition-colors duration-300">
+            <h3 className="text-2xl font-bold mb-6 text-white">
               Send Me a Message
             </h3>
 
@@ -379,7 +290,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                 <motion.div variants={itemVariants}>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-[rgb(120,198,187)] mb-2"
+                    className="block text-sm font-medium text-teal-300 mb-2"
                   >
                     Your Name
                   </label>
@@ -390,7 +301,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-[#0d1117] border border-[#2a303c] rounded-lg focus:ring-2 focus:ring-[rgb(120,198,187)] focus:border-[rgb(120,198,187)] text-white font-bold transition-all duration-300"
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:border-teal-500 focus:outline-none text-white transition-all duration-300"
                     placeholder="Enter Your Name"
                     whileFocus={{
                       boxShadow: "0 0 0 2px rgba(120, 198, 187, 0.3)",
