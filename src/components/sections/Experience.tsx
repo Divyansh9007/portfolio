@@ -44,9 +44,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           <h3 className="text-lg font-semibold mt-3 mb-1 text-teal-300">
             {title}
           </h3>
-          <h4 className="text-teal-400 font-medium mb-3">
-            {organization}
-          </h4>
+          <h4 className="text-teal-400 font-medium mb-3">{organization}</h4>
           <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
         </div>
       </div>
@@ -79,7 +77,8 @@ const Experience: React.FC<ExperienceProps> = ({ id }) => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            My professional journey and educational background in web development and design.
+            My professional journey and educational background in web
+            development and design.
           </motion.p>
         </div>
 
@@ -105,9 +104,7 @@ const Experience: React.FC<ExperienceProps> = ({ id }) => {
                     title={item.title}
                     organization={item.organization}
                     description={item.description}
-                    icon={
-                      <Briefcase className="w-5 h-5 text-teal-400" />
-                    }
+                    icon={<Briefcase className="w-5 h-5 text-teal-400" />}
                     isLast={index === experienceData.length - 1}
                   />
                 ))}
@@ -134,9 +131,7 @@ const Experience: React.FC<ExperienceProps> = ({ id }) => {
                     title={item.degree}
                     organization={item.institution}
                     description={item.description}
-                    icon={
-                      <GraduationCap className="w-5 h-5 text-teal-400" />
-                    }
+                    icon={<GraduationCap className="w-5 h-5 text-teal-400" />}
                     isLast={index === educationData.length - 1}
                   />
                 ))}

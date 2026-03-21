@@ -6,6 +6,7 @@ import {
   Phone,
   Linkedin,
   Github,
+  Instagram,
   ExternalLink,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
@@ -29,7 +30,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -54,7 +55,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
           subject: formData.subject,
           message: formData.message,
         },
-        "TDQTn0t6Shv42HQQw"
+        "TDQTn0t6Shv42HQQw",
       );
 
       if (result.status === 200) {
@@ -231,9 +232,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                   <div className="p-2 rounded-lg bg-[#0077b5]/20 group-hover:bg-[#0077b5]/30 transition-colors duration-300">
                     <Linkedin className="w-5 h-5 text-[#0077b5]" />
                   </div>
-                  <span className="text-gray-300 font-medium">
-                    LinkedIn
-                  </span>
+                  <span className="text-gray-300 font-medium">LinkedIn</span>
                   <ExternalLink className="w-4 h-4 ml-auto text-gray-500 group-hover:text-teal-400" />
                 </motion.a>
 
@@ -266,6 +265,23 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                     <Mail className="w-5 h-5 text-[#D44638]" />
                   </div>
                   <span className="text-gray-300 font-medium">Email</span>
+                  <ExternalLink className="w-4 h-4 ml-auto text-gray-500 group-hover:text-teal-400" />
+                </motion.a>
+
+                {/* Instagram */}
+                <motion.a
+                  href="https://www.instagram.com/divyansh22_11/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 rounded-lg bg-black/50 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 group"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  aria-label="Instagram"
+                >
+                  <div className="p-2 rounded-lg bg-[#E1306C]/20 group-hover:bg-[#E1306C]/30 transition-colors duration-300">
+                    <Instagram className="w-5 h-5 text-[#E1306C]" />
+                  </div>
+                  <span className="text-gray-300 font-medium">Instagram</span>
                   <ExternalLink className="w-4 h-4 ml-auto text-gray-500 group-hover:text-teal-400" />
                 </motion.a>
               </div>

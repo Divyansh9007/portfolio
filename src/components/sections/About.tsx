@@ -120,10 +120,8 @@ const About: React.FC<AboutProps> = ({ id }) => {
             efficient machine learning pipelines and automation workflows.
             <br />
             <br />I have solved over{" "}
-            <span className="font-semibold text-teal-400">
-              300+
-            </span>{" "}
-            data structure and algorithm problems across platforms like{" "}
+            <span className="font-semibold text-teal-400">300+</span> data
+            structure and algorithm problems across platforms like{" "}
             <a
               href="https://leetcode.com/u/Divyansh798/"
               target="_blank"
@@ -182,11 +180,12 @@ const About: React.FC<AboutProps> = ({ id }) => {
               technologies and problem-solving through code.
             </p>
             <p className="text-gray-300 text-lg font-medium leading-relaxed">
-              Over time, I had the opportunity to work with startups,
-              agencies, and enthusiastic teams, gaining practical experience
-              and sharpening my skills in real-world projects. Today, as an MLOps Engineer, I focus
-              on building scalable machine learning pipelines and automation workflows while maintaining
-              a passion for responsive, accessible, and user-centric applications.
+              Over time, I had the opportunity to work with startups, agencies,
+              and enthusiastic teams, gaining practical experience and
+              sharpening my skills in real-world projects. Today, as an MLOps
+              Engineer, I focus on building scalable machine learning pipelines
+              and automation workflows while maintaining a passion for
+              responsive, accessible, and user-centric applications.
             </p>
           </motion.div>
 

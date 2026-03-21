@@ -44,9 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       animate={inView ? "visible" : "hidden"}
       className="relative group overflow-hidden rounded-lg bg-black/50 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 shadow-lg hover:shadow-xl"
     >
-      <motion.div
-        className="h-full flex flex-col overflow-hidden"
-      >
+      <motion.div className="h-full flex flex-col overflow-hidden">
         <div className="relative overflow-hidden aspect-video flex items-center justify-center bg-black/20">
           <motion.img
             src={project.image}
@@ -124,7 +122,7 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
         project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.tags.some((tag) =>
-          tag.toLowerCase().includes(searchTerm.toLowerCase())
+          tag.toLowerCase().includes(searchTerm.toLowerCase()),
         );
       return matchesFilter && matchesSearch;
     });

@@ -49,9 +49,7 @@ const Footer = () => {
             variants={itemVariants}
             className="rounded-lg bg-black/50 border border-gray-700 hover:border-teal-500/50 p-8 transition-all duration-300"
           >
-            <h3 className="text-xl font-bold mb-4 text-teal-400">
-              Portfolio
-            </h3>
+            <h3 className="text-xl font-bold mb-4 text-teal-400">Portfolio</h3>
             <p className="text-gray-300 mb-6 max-w-md">
               Building beautiful, functional websites and applications with a
               focus on exceptional user experiences.
@@ -106,7 +104,7 @@ const Footer = () => {
                       {link}
                     </a>
                   </motion.li>
-                )
+                ),
               )}
             </ul>
           </motion.div>

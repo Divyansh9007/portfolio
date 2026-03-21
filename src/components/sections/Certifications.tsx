@@ -8,7 +8,10 @@ interface CertificationsProps {
 
 const Certifications: React.FC<CertificationsProps> = ({ id }) => {
   return (
-    <section id={id} className="py-20 px-6 bg-gradient-to-br from-[#0a0e1a] via-[#141820] to-[#0f1216]">
+    <section
+      id={id}
+      className="py-20 px-6 bg-gradient-to-br from-[#0a0e1a] via-[#141820] to-[#0f1216]"
+    >
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
@@ -43,7 +46,9 @@ const Certifications: React.FC<CertificationsProps> = ({ id }) => {
                 </div>
               </div>
 
-              <p className="text-gray-300 text-sm mb-4 leading-relaxed">{cert.description}</p>
+              <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                {cert.description}
+              </p>
 
               <a
                 href={cert.credentialUrl}
