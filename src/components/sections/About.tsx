@@ -167,7 +167,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
           >
             {/* Decorative icon and heading */}
             <div className="flex items-center mb-4">
-              <span className="text-3xl mr-3">🚀</span>
+              <span className="text-3xl mr-3"></span>
               <h3 className="text-3xl md:text-4xl font-bold text-white">
                 My Journey
               </h3>
@@ -213,7 +213,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            🚀 My Tech Stack
+            My Tech Stack
           </motion.h3>
 
           <div className="overflow-hidden border-t border-[rgb(120,198,187)]/20 pt-4">
