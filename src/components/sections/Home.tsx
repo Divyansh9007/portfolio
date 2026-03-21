@@ -7,7 +7,11 @@ interface HomeProps {
   setActiveSection: (section: string) => void;
 }
 
-const descriptors = ["Full-Stack Developer", "Problem Solver", "Tech Explorer"];
+const descriptors = [
+  "AI and Cloud",
+  "Machine Learning Enthusiast",
+  "Tech Explorer",
+];
 
 const Home: React.FC<HomeProps> = ({ id, setActiveSection }) => {
   // State for typing animation
